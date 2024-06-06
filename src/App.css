@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.objects {
+  background-color: aquamarine;
+}
+.objects h1 {
+  color: rgb(6, 116, 220);
+}
+.objects input, button {
+  margin: 1rem;
+  font-size: 1.4rem;
+  border: non;
+  border-radius: 4px;
+}
+input:focus {
+  color: rgb(12, 97, 176);
+ border: 2px solid rgb(0, 136, 255);
+ outline-width: 1px;
+ /* outline-offset: ; */
+ outline-color:rgb(0, 136, 255);
+ outline-style: solid;
+}
+input, h1{
+  margin:1.5rem;
+}
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color:rgb(1, 38, 107)
+}
