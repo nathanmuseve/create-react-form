@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 function Form() {
     const[input, setInput] = useState("");
@@ -6,34 +6,30 @@ function Form() {
     const[input2, setInput2] = useState("");
     const[input3, setInput3] = useState("");
 
-    function handleSubmit(event) {
-      event.preventDefault();
-      
+    let details ={Firstname:input, LastName:input1, Location:input2, Year:input3};
+
+    function ClearFormInputs(event) {
+      Array.from(event.target).forEach((e) => (e.value="") );
     }
 
-    // function handleFirstNameChange(event) {
-    // }
+    function handleSubmit(event) {
+      event.preventDefault();
+      console.log(details);
+      ClearFormInputs(event);
+      setInput("");
+      setInput1("");
+      setInput2("");
+      setInput3("");
+  
+    }
 
-    // function handleLastNameChange(event) {
-    //   const name = event.target.name;
-    //   const value = event.target.value;
-    //   setInput1(values => ({[name]:value}));
-    // }
-
-    // function handleLocationChange(event) {
-    //   const name = event.target.name;
-    //   const value = event.target.value;
-    //   setInput2(values => ({[name]:value}));
-    // }
-
-    // function handleYearChange(event) {
-    //   const name = event.target.name;
-    //   const value = event.target.value;
-    //   setInput3(values => ({[name]:value}));
-    // }
      console.log(event.target.value);
   return (
-    <div>
+    <div className="clearForm">
+      <h1>Form two, 2</h1>
+      <p>Please, carefully fill in the provided fields below.</p>
+      <p>Submit form and it will clear automatically the form fields after submit:</p>
+      <hr />
       <form onSubmit={handleSubmit} className="myForm">
         <div className="input">
         <labe htmlFor="fname" >Enter First Name</labe>
@@ -44,22 +40,22 @@ function Form() {
 
         <div className="input">
         <labe htmlFor="fname" >Enter Last Name</labe>
-        <input type="text" name="lname" placeholder="Enter your last name" required value={input1} onChange={(e)=>{
-            setInput1(e.target.value)
+        <input type="text" name="lname" placeholder="Enter your last name" required value={input1} onChange={(event)=>{
+            setInput1(event.target.value)
         }} />
         </div>
 
         <div className="input">
         <labe htmlFor="locname" >Location</labe>
-        <input type="text" name="locname" placeholder="Enter your location name" rel="" value={input2} onChange={(e)=>{
-            setInput2(e.target.value)
+        <input type="text" name="locname" placeholder="Enter your location name" rel="" value={input2} onChange={(event)=>{
+            setInput2(event.target.value)
         }} />
         </div>
 
         <div className="input">
           <label htmlFor="years">Years</label>
-        <input type="number" name="years" max={64} value={input3.value} onChange={(e)=>{
-            setInput3(e.target.value)
+        <input type="number" name="years" max={64} value={input3.value} onChange={(event)=>{
+            setInput3(+event.target.value)
         }} required/>
         </div>
 

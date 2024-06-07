@@ -11,7 +11,7 @@
   color: rgb(6, 116, 220);
 }
 .objects input, button {
-  margin: 1rem;
+  margin: 1rem 0 8px 6px;
   font-size: 1.4rem;
   border: non;
   border-radius: 4px;
